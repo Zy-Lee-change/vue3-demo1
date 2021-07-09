@@ -1,30 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-05 12:27:27
+ * @LastEditTime: 2021-07-09 13:23:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue3-demo1\src\App.vue
+-->
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <navs class="nav-hover"></navs>
+  <headers></headers>
+  <router-view class="container h" />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+<script>
+/* 引入需要用到的vue方法属性 */
+import { onMounted, defineComponent } from "vue";
+import Navs from "@/components/Nav";
+import Headers from "@/components/Headers";
+export default defineComponent({
+  components: {
+    Navs,
+    Headers,
+  },
+
+  /* 组合式API setup函数 */
+  setup() {
+    onMounted(() => {});
+    return {};
+  },
+});
+</script>
+
+<style lang="scss" type="text/scss" scoped>
+@import "./assets/style/function.scss";
+::v-global(#app) {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.container {
+  padding: px2(80) px2(20) px2(20);
+  margin-left: px2(80);
+  background-color: #f3f3f3;
+  overflow-y: auto;
+}
+.nav-hover {
+  float: left;
 }
 </style>
