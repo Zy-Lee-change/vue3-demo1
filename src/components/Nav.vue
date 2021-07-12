@@ -1,7 +1,7 @@
 <!--
  * @Author: Ken
  * @Date: 2021-07-06 11:37:39
- * @LastEditTime: 2021-07-08 14:21:06
+ * @LastEditTime: 2021-07-12 11:24:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\components\nav.vue
@@ -20,8 +20,8 @@
     </div>
     <div
       class="nav-tab cursor"
-      @click="routeChange('about')"
-      :class="{ ac: navName === 'about' }"
+      @click="routeChange('gantt')"
+      :class="{ ac: navName === 'gantt' }"
     >
       <i class="el-icon-s-promotion"></i>
     </div>

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-05 12:27:27
- * @LastEditTime: 2021-07-09 11:37:14
+ * @LastEditTime: 2021-07-12 11:24:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\router\index.js
@@ -19,12 +19,12 @@ const routes = [
     },
   },
   {
-    path: "/about",
-    name: "about",
+    path: "/gantt",
+    name: "gantt",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/about/About.vue"),
+      import(/* webpackChunkName: "about" */ "../views/gantt/Gantt.vue"),
     meta: {
-      name: "关于",
+      name: "Gantt Chart",
     },
   },
 ];

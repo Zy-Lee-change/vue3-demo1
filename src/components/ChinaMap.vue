@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-09 16:26:01
- * @LastEditTime: 2021-07-09 17:45:45
+ * @LastEditTime: 2021-07-12 10:13:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\components\Map.vue
@@ -15,7 +15,7 @@ import { registerChinaMap } from "./map/registerMap";
 import { chinaGeoCoordMap } from "./map/ProvincialCapital";
 export default {
   props: {
-    datas: [],
+    datas: null,
   },
   setup(props) {
     let { proxy } = getCurrentInstance();

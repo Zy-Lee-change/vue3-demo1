@@ -108,3 +108,16 @@
 .t-weightM {
   font-weight: 400;
 }
+
+.common-bg {
+  background: #fff;
+}
+
+.table-box {
+  padding: 0 40px;
+}
+
+.pagination-box {
+  padding: 20px 0 0 0;
+  @extend .t-center
+}

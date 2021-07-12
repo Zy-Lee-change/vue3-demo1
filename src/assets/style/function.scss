@@ -19,6 +19,7 @@ $mainColor: #333333;
 
 /* 居中定位 */
 @mixin pCenter {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

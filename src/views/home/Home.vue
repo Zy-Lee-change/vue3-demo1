@@ -1,7 +1,15 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-05 12:27:27
- * @LastEditTime: 2021-07-09 17:44:52
+ * @LastEditTime: 2021-07-12 11:26:28
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue3-demo1\src\views\home\Home.vue
+-->
+<!--
+ * @Author: your name
+ * @Date: 2021-07-05 12:27:27
+ * @LastEditTime: 2021-07-12 11:13:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\views\Home.vue
@@ -41,6 +49,33 @@
       <div class="common-bg pr w map-box">
         <china-map :datas="mapData"></china-map>
       </div>
+      <div class="common-bg table-box w">
+        <el-table
+          ref="singleTable"
+          :data="tableData"
+          highlight-current-row
+          @current-change="currentRowChange"
+          width="100%"
+        >
+          <el-table-column type="index" width="50"> </el-table-column>
+          <el-table-column property="date" label="日期" width="120">
+          </el-table-column>
+          <el-table-column property="name" label="姓名" width="120">
+          </el-table-column>
+          <el-table-column property="address" label="地址"> </el-table-column>
+        </el-table>
+
+        <div class="pagination-box">
+          <el-pagination
+            :page-sizes="$general.pageSizes"
+            :page-size="$general.pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="tableTotal"
+            background
+          >
+          </el-pagination>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -61,6 +96,31 @@ export default defineComponent({
       barData: barOption,
       pieData: null,
       mapData: null,
+      tableData: [
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄",
+        },
+        {
+          date: "2016-05-04",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1517 弄",
+        },
+        {
+          date: "2016-05-01",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1519 弄",
+        },
+        {
+          date: "2016-05-03",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1516 弄",
+        },
+      ],
+      tableTotal: 400,
+      currentRow: null,
+      currentRowChange: null,
     });
 
     const getPieData = (val) => {
@@ -345,6 +405,9 @@ export default defineComponent({
       ],
     ];
 
+    data_.currentRowChange = (val) => {
+      data_.currentRow = val;
+    };
     onMounted(() => {});
 
     return {
@@ -359,7 +422,6 @@ export default defineComponent({
   justify-content: space-between;
   flex-wrap: wrap;
   .common-bg {
-    background: #fff;
     margin-bottom: px2(15);
     padding-top: px2(50);
     .title {
@@ -374,7 +436,7 @@ export default defineComponent({
   .bar-box,
   .pie-box {
     width: 49%;
-    height: px2(320);
+    height: px2(420);
   }
   .progress-box {
     justify-content: space-around;
