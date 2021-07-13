@@ -114,54 +114,6 @@
             <div class="pr inline-cell gantt pr"></div>
           </div>
         </div>
-
-        <div class="item">
-          <div class="first-level df">
-            <div class="pr t-left inline-cell event-name">
-              <span class="parent w">某某某某</span>
-            </div>
-            <div class="pr inline-cell charge-man"><span></span></div>
-            <div class="pr inline-cell start-time"><span></span></div>
-            <div class="pr inline-cell end-time"><span></span></div>
-            <div class="pr inline-cell gantt pr"></div>
-          </div>
-          <div class="second-level df">
-            <div class="pr t-left inline-cell event-name">
-              <span class="child w">某某某某</span>
-            </div>
-            <div class="pr inline-cell charge-man"><span></span></div>
-            <div class="pr inline-cell start-time"><span></span></div>
-            <div class="pr inline-cell end-time"><span></span></div>
-            <div class="pr inline-cell gantt pr">
-              <div
-                class="process pa cursor"
-                style="width: 240px"
-                :style="{ left: `${180 - scrollWidth}px` }"
-              ></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="first-level df">
-            <div class="pr t-left inline-cell event-name">
-              <span class="parent w">某某某某</span>
-            </div>
-            <div class="pr inline-cell charge-man"><span></span></div>
-            <div class="pr inline-cell start-time"><span></span></div>
-            <div class="pr inline-cell end-time"><span></span></div>
-            <div class="pr inline-cell gantt pr"></div>
-          </div>
-          <div class="second-level df">
-            <div class="pr t-left inline-cell event-name">
-              <span class="child w">某某某某</span>
-            </div>
-            <div class="pr inline-cell charge-man"><span></span></div>
-            <div class="pr inline-cell start-time"><span></span></div>
-            <div class="pr inline-cell end-time"><span></span></div>
-            <div class="pr inline-cell gantt pr"></div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -192,8 +144,8 @@ export default {
     };
     data_.tipMove = (e) => {
       console.log(e);
-      pTip.value.style.top = e.clientY + 5 + "px";
-      pTip.value.style.left = e.clientX - e.offsetX + "px";
+      pTip.value.style.top = e.clientY + 25 + "px";
+      pTip.value.style.left = e.clientX + "px";
     };
     data_.tipOut = (e) => {
       console.log(e);

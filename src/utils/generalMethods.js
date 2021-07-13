@@ -1,17 +1,31 @@
 /*
  * @Author: your name
  * @Date: 2021-07-09 14:17:43
- * @LastEditTime: 2021-07-09 14:31:42
+ * @LastEditTime: 2021-07-13 10:42:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\utils\generalMethods.js
  */
-/* 计算数组总和 */
-const arrSum = (data) => {
-  let sum_ = data.reduce((prev, cur) => {
-    return prev + cur;
-  });
-  return sum_;
+/* 获取对象数组中指定key的最大或最小值 type：max或min  */
+const getArrMaxMin = (type, data, keys) => {
+  let res_ = null;
+  if (type === "max") {
+    res_ = Math.max.apply(
+      Math,
+      data.map((item) => {
+        return item[keys];
+      })
+    );
+  } else {
+    res_ = Math.min.apply(
+      Math,
+      data.map((item) => {
+        return item[keys];
+      })
+    );
+  }
+
+  return res_;
 };
 
-export { arrSum };
+export { getArrMaxMin };
