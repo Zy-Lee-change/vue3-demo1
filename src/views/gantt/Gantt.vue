@@ -233,7 +233,7 @@ export default {
   .gantt-body {
     width: calc(100% + 17px);
     max-height: px2(250);
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
     .tip {
       top: px2(-20);
