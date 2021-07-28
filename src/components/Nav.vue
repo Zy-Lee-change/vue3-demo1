@@ -1,10 +1,10 @@
 <!--
  * @Author: Ken
  * @Date: 2021-07-06 11:37:39
- * @LastEditTime: 2021-07-12 11:24:57
+ * @LastEditTime: 2021-07-28 15:30:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-demo1\src\components\nav.vue
+ * @FilePath: \vue3-demo1\src\components\Nav.vue
 -->
 <template>
   <div class="nav h t-center pr">
@@ -24,6 +24,13 @@
       :class="{ ac: navName === 'gantt' }"
     >
       <i class="el-icon-s-promotion"></i>
+    </div>
+    <div
+      class="nav-tab cursor"
+      @click="routeChange('form')"
+      :class="{ ac: navName === 'form' }"
+    >
+      <i class="el-icon-s-order"></i>
     </div>
   </div>
 </template>
@@ -71,7 +78,7 @@ export default {
   background-color: #49a4ff;
   color: #fff;
   font-size: px2(36);
-  z-index: 1;
+  z-index: 11;
   .logo {
     height: px2(80);
   }

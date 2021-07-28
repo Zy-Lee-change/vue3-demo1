@@ -1,7 +1,7 @@
 /*
  * @Author: Ken
  * @Date: 2021-07-08 11:16:30
- * @LastEditTime: 2021-07-12 10:20:22
+ * @LastEditTime: 2021-07-28 15:51:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\utils\generalTool.js
@@ -33,7 +33,7 @@ export default {
       if (require) {
         res.push({
           required: require,
-          message: triggerName === "blur" ? "请输入" : "请选择" + label,
+          message: triggerName === "blur" ? "请输入" + label : "请选择" + label,
           trigger: triggerName,
         });
       }

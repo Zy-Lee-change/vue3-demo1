@@ -120,6 +120,7 @@
 </template>
 <script>
 import { ref, reactive, onMounted, getCurrentInstance, toRefs } from "vue";
+import { Gantt } from "./data/ganttData";
 export default {
   setup(props, context) {
     const { proxy } = getCurrentInstance();
@@ -133,7 +134,10 @@ export default {
       tipOver: null,
       tipOut: null,
       tipShow: false,
+      list: Gantt, // 任务列表数据
+      dayList: Gantt, // 时间列表数据
     });
+
     data_.dateScroll = (e) => {
       console.log(e, dateScroller.value.scrollLeft);
       data_.scrollWidth = dateScroller.value.scrollLeft;
@@ -151,6 +155,27 @@ export default {
       console.log(e);
       data_.tipShow = false;
     };
+
+    /* 获取日历 */
+    // const getCalendar = (start, end) => {};
+
+    /* 获取列表数据中最早的时间和最晚的时间 */
+    const getWeekList = () => {
+      console.log(data_.list);
+      let [firstDay, lastDay] = [0, 0];
+      data_.list.map((item) => {
+        if (!firstDay) firstDay = item.children[0].startTime;
+        item.children.map((cItem) => {
+          firstDay = firstDay > cItem.startTime ? cItem.startTime : firstDay;
+          lastDay = lastDay < cItem.endTime ? cItem.endTime : lastDay;
+        });
+      });
+      console.log(firstDay, lastDay);
+      const tenDay = 10 * 24 * 3600 * 1000;
+      firstDay -= tenDay;
+      lastDay += tenDay;
+    };
+    getWeekList();
 
     //这里面可以放钩子
     onMounted(() => {});

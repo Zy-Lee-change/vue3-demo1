@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-05 12:27:27
- * @LastEditTime: 2021-07-12 11:26:28
+ * @LastEditTime: 2021-07-28 14:48:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\views\home\Home.vue
@@ -15,66 +15,64 @@
  * @FilePath: \vue3-demo1\src\views\Home.vue
 -->
 <template>
-  <div>
-    <div class="home df">
-      <div class="common-bg pr bar-box">
-        <p class="title w pa">周转率</p>
-        <Chart :chart-data="barData"></Chart>
-      </div>
-      <div class="common-bg pr pie-box">
-        <p class="title w pa">年龄比例</p>
-        <Chart :chart-data="pieData"></Chart>
-      </div>
-      <div class="common-bg pr w detail-box">
-        <p class="title w pa">进度</p>
-        <div class="wh df progress-box t-center">
-          <div class="item">
-            <h5>未完成</h5>
-            <p>1234</p>
-          </div>
-          <div class="item">
-            <h5>已完成</h5>
-            <p>1234</p>
-          </div>
-          <div class="item">
-            <h5>延迟</h5>
-            <p>1234</p>
-          </div>
-          <div class="item">
-            <h5>完成已延期</h5>
-            <p>1234</p>
-          </div>
+  <div class="home df">
+    <div class="common-bg pr bar-box">
+      <p class="title w pa">周转率</p>
+      <Chart :chart-data="barData"></Chart>
+    </div>
+    <div class="common-bg pr pie-box">
+      <p class="title w pa">年龄比例</p>
+      <Chart :chart-data="pieData"></Chart>
+    </div>
+    <div class="common-bg pr w detail-box">
+      <p class="title w pa">进度</p>
+      <div class="wh df progress-box t-center">
+        <div class="item">
+          <h5>未完成</h5>
+          <p>1234</p>
+        </div>
+        <div class="item">
+          <h5>已完成</h5>
+          <p>1234</p>
+        </div>
+        <div class="item">
+          <h5>延迟</h5>
+          <p>1234</p>
+        </div>
+        <div class="item">
+          <h5>完成已延期</h5>
+          <p>1234</p>
         </div>
       </div>
-      <div class="common-bg pr w map-box">
-        <china-map :datas="mapData"></china-map>
-      </div>
-      <div class="common-bg table-box w">
-        <el-table
-          ref="singleTable"
-          :data="tableData"
-          highlight-current-row
-          @current-change="currentRowChange"
-          width="100%"
-        >
-          <el-table-column type="index" width="50"> </el-table-column>
-          <el-table-column property="date" label="日期" width="120">
-          </el-table-column>
-          <el-table-column property="name" label="姓名" width="120">
-          </el-table-column>
-          <el-table-column property="address" label="地址"> </el-table-column>
-        </el-table>
+    </div>
+    <div class="common-bg pr w map-box">
+      <china-map :datas="mapData"></china-map>
+    </div>
+    <div class="common-bg table-box w">
+      <el-table
+        ref="singleTable"
+        :data="tableData"
+        highlight-current-row
+        @current-change="currentRowChange"
+        width="100%"
+      >
+        <el-table-column type="index" width="50"> </el-table-column>
+        <el-table-column property="date" label="日期" width="120">
+        </el-table-column>
+        <el-table-column property="name" label="姓名" width="120">
+        </el-table-column>
+        <el-table-column property="address" label="地址"> </el-table-column>
+      </el-table>
 
-        <div class="pagination-box">
-          <el-pagination
-            :page-sizes="$general.pageSizes"
-            :page-size="$general.pageSize"
-            layout="total, sizes, prev, pager, next, jumper"
-            :total="tableTotal"
-            background
-          >
-          </el-pagination>
-        </div>
+      <div class="pagination-box">
+        <el-pagination
+          :page-sizes="$general.pageSizes"
+          :page-size="$general.pageSize"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="tableTotal"
+          background
+        >
+        </el-pagination>
       </div>
     </div>
   </div>

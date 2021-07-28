@@ -165,6 +165,8 @@ export default {
   left: 0;
   background-color: #fff;
   padding-left: px2(100);
+  z-index: 10;
+  box-shadow: 0 px2(4) px2(8) rgba(170, 170, 170, 0.3);
   .page-name {
     line-height: px2(60);
     font-size: px2(24);

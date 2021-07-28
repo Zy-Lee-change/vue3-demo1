@@ -1,20 +1,22 @@
 /*
  * @Author: your name
  * @Date: 2021-07-05 12:27:27
- * @LastEditTime: 2021-07-12 11:24:27
+ * @LastEditTime: 2021-07-28 15:31:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\router\index.js
  */
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/home/Home.vue";
+import form from "./form";
 
-const routes = [
+let routes = [
   {
     path: "/",
     name: "home",
     component: Home,
     meta: {
+      auth: "pass",
       name: "首页",
     },
   },
@@ -24,11 +26,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/gantt/Gantt.vue"),
     meta: {
+      auth: "pass",
       name: "Gantt Chart",
     },
   },
 ];
-
+routes = routes.concat(form);
 const router = createRouter({
   history: createWebHashHistory(),
   routes,

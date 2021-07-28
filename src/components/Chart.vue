@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-09 11:35:35
- * @LastEditTime: 2021-07-09 17:27:11
+ * @LastEditTime: 2021-07-26 16:00:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-demo1\src\components\chart.vue
+ * @FilePath: \vue3-demo1\src\components\Chart.vue
 -->
 <template>
   <div class="wh" ref="chartSet"></div>
@@ -29,6 +29,10 @@ export default {
       let echart_ = proxy.$echarts.init(chartSet.value);
       // let echart_ = proxy.$echarts.init(document.getElementById("aa"));
       echart_.setOption(props.chartData);
+
+      window.addEventListener("resize", () => {
+        echart_.resize();
+      });
     };
     onMounted(() => {
       console.log(props);

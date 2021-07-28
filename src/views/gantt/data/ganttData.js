@@ -1,7 +1,7 @@
 /*
  * @Author: Ken
  * @Date: 2021-07-13 09:57:56
- * @LastEditTime: 2021-07-13 10:23:26
+ * @LastEditTime: 2021-07-26 16:39:49
  * @Description:
  * @FilePath: \vue3-demo1\src\views\gantt\data\ganttData.js
  * Go Ring!
@@ -14,14 +14,14 @@ export const Gantt = [
       {
         task: "收到了借款方",
         tasker: "孙某某",
-        startTime: 1594606361000,
-        endTime: 1594606361000,
+        startTime: 1597284761000,
+        endTime: 1597457561000,
       },
       {
         task: "收到了借款方1",
         tasker: "陈某某",
-        startTime: 1597284761000,
-        endTime: 1597457561000,
+        startTime: 1594606361000,
+        endTime: 1594606361000,
       },
     ],
   },

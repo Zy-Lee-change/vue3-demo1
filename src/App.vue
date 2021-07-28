@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-05 12:27:27
- * @LastEditTime: 2021-07-09 13:23:57
+ * @LastEditTime: 2021-07-28 17:38:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\App.vue
@@ -9,7 +9,9 @@
 <template>
   <navs class="nav-hover"></navs>
   <headers></headers>
-  <router-view class="container h" />
+  <div class="container h">
+    <router-view />
+  </div>
 </template>
 
 <script>
