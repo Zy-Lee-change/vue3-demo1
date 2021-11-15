@@ -32,6 +32,13 @@
     >
       <i class="el-icon-s-order"></i>
     </div>
+    <div
+      class="nav-tab cursor"
+      @click="routeChange('force')"
+      :class="{ ac: navName === 'force' }"
+    >
+      <i class="el-icon-s-platform"></i>
+    </div>
   </div>
 </template>
 <script>
