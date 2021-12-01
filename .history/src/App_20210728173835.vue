@@ -24,9 +24,7 @@ export default defineComponent({
     Navs,
     Headers,
   },
-  mounted() {
-    console.log(this.$store.state);
-  },
+
   /* 组合式API setup函数 */
   setup() {
     onMounted(() => {});

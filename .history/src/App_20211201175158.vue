@@ -25,7 +25,7 @@ export default defineComponent({
     Headers,
   },
   mounted() {
-    console.log(this.$store.state);
+    console.log(this.$store);
   },
   /* 组合式API setup函数 */
   setup() {
