@@ -9,7 +9,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/home/Home";
 import Login from "../views/login";
-import Index from "../views/Index";
 import form from "./form";
 
 let routes = [
@@ -23,37 +22,26 @@ let routes = [
     },
   },
   {
-    path: "/index",
-    name: "index",
-    component: Index,
+    path: "/home",
+    name: "home",
+    component: Home,
     meta: {
       auth: "pass",
+      name: "首页",
     },
-    children: [
-      {
-        path: "",
-        name: "home",
-        component: Home,
-        meta: {
-          auth: "pass",
-          name: "首页",
-        },
-      },
-      {
-        path: "gantt",
-        name: "gantt",
-        component: () =>
-          import(/* webpackChunkName: "about" */ "../views/gantt/Gantt.vue"),
-        meta: {
-          auth: "pass",
-          name: "Gantt Chart",
-          code: "AUTH_GANTT",
-        },
-      },
-    ],
+  },
+  {
+    path: "/gantt",
+    name: "gantt",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/gantt/Gantt.vue"),
+    meta: {
+      auth: "pass",
+      name: "Gantt Chart",
+    },
   },
 ];
-routes[1].children = routes[1].children.concat(form);
+routes = routes.concat(form);
 const router = createRouter({
   history: createWebHashHistory(),
   routes,

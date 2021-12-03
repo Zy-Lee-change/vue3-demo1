@@ -42,7 +42,7 @@
   </div>
 </template>
 <script>
-import { ref, reactive, onMounted, watch } from "vue";
+import { ref, reactive, onMounted, getCurrentInstance, watch } from "vue";
 /* 使用router方法，也可使用以前默认的方法 */
 import { useRoute, useRouter } from "vue-router";
 export default {

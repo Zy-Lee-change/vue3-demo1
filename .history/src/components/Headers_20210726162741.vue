@@ -136,7 +136,6 @@ export default {
       }
     );
     onMounted(() => {
-      title.value = route_.meta.name;
       data_.personalMsg = {
         name: "Ken",
         phone: "135********",

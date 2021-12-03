@@ -38,4 +38,13 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+.container {
+  padding: px2(80) px2(20) px2(20);
+  margin-left: px2(80);
+  background-color: #f3f3f3;
+  overflow-y: auto;
+}
+.nav-hover {
+  float: left;
+}
 </style>

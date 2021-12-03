@@ -1,4 +1,4 @@
-import { BASE_SERVER, ENV_BASE } from "./../../request/config";
+import { BASE_SERVER, ENV_BASE } from "../../request/config";
 const state = {
   loginStatus: false,
   token: "",

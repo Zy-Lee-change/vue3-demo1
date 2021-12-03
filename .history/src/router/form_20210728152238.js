@@ -10,7 +10,7 @@ const Form = () =>
   import(/* webpackChunkName: "addressBook" */ "./../views/form/Form.vue");
 export default [
   {
-    path: "form",
+    path: "/form",
     name: "form",
     component: Form,
     meta: {

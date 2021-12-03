@@ -7,7 +7,7 @@
  * @FilePath: \vue3-demo1\src\App.vue
 -->
 <template>
-  <div class="wh pr">
+  <div class="wh">
     <router-view />
   </div>
 </template>
@@ -37,5 +37,14 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+.container {
+  padding: px2(80) px2(20) px2(20);
+  margin-left: px2(80);
+  background-color: #f3f3f3;
+  overflow-y: auto;
+}
+.nav-hover {
+  float: left;
 }
 </style>

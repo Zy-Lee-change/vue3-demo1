@@ -47,7 +47,6 @@ let routes = [
         meta: {
           auth: "pass",
           name: "Gantt Chart",
-          code: "AUTH_GANTT",
         },
       },
     ],

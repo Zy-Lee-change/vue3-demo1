@@ -13,8 +13,8 @@ const getters = {
     return state.token;
   },
   // 获取axios配置
-  GET_AJAXCONFIG: (state) => (url) => {
-    let result = {
+  getAjaxConf: (state) => (url) => {
+    var result = {
       header: null,
       url: null,
       server: null,

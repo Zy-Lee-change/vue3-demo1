@@ -40,14 +40,13 @@ let routes = [
         },
       },
       {
-        path: "gantt",
+        path: "/gantt",
         name: "gantt",
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/gantt/Gantt.vue"),
         meta: {
           auth: "pass",
           name: "Gantt Chart",
-          code: "AUTH_GANTT",
         },
       },
     ],

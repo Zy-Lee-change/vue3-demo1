@@ -7,7 +7,9 @@
  * @FilePath: \vue3-demo1\src\App.vue
 -->
 <template>
-  <div class="wh pr">
+  <navs class="nav-hover"></navs>
+  <headers></headers>
+  <div class="container h">
     <router-view />
   </div>
 </template>
@@ -15,6 +17,8 @@
 <script>
 /* 引入需要用到的vue方法属性 */
 import { onMounted, defineComponent } from "vue";
+import Navs from "@/components/Nav";
+import Headers from "@/components/Headers";
 export default defineComponent({
   mounted() {
     console.log(this.$store.state);
@@ -37,5 +41,14 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+.container {
+  padding: px2(80) px2(20) px2(20);
+  margin-left: px2(80);
+  background-color: #f3f3f3;
+  overflow-y: auto;
+}
+.nav-hover {
+  float: left;
 }
 </style>
