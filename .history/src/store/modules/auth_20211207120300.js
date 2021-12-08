@@ -1,0 +1,38 @@
+import router from "../../router";
+import { asyncRouterMap } from "../../router/asyncRouterMap";
+const state = {
+  name: "",
+  menu: [],
+  nav: [],
+  page: {
+    INDEX: true,
+    INDEX_HOME: true,
+    INDEX_GANTT: false,
+    INDEX_FORMS: true,
+  },
+};
+const mutations = {
+  Operation(state) {
+    console.log(state, router);
+    /**
+     * get the user's access, include page、 menu and nav
+     * and then filter the view route list
+     */
+    let newRoute = filterRoute(asyncRouterMap);
+    console.log(newRoute);
+  },
+};
+const filterRoute = (list) => {
+  const routeList = list.filter((item) => {
+    if (state.page[item.meta.code]) {
+      if (Object.prototype.hasOwnProperty.call(item, "children")) {
+        filterRoute(item.children);
+      }
+      return item;
+    }
+    return false;
+  });
+  return routeList;
+};
+
+export default { state, mutations };
