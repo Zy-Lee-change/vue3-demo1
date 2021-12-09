@@ -8,6 +8,7 @@ axios.defaults.headers.post["Content-Type"] = "application/json";
 // 请求拦截器
 axios.interceptors.request.use((config) => {
   config.url = ENV_BASE + config.url;
+  console.log(config);
   return config;
 });
 

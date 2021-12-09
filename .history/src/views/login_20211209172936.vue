@@ -32,6 +32,11 @@ import {
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 export default defineComponent({
+  mounted() {
+    setTimeout(() => {
+      console.log(this.$funs.get());
+    }, 1000);
+  },
   setup() {
     const { proxy } = getCurrentInstance();
     const store = useStore();

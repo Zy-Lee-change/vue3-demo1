@@ -44,7 +44,7 @@ const actions = {
   CHECK_LOGIN({ commit, state }) {
     state.token = sessionStorage.getItem("TOKEN");
     console.log(state);
-    commit("SET_TOKEN", state.token);
+    commit("setAjaxAuth", state.token);
   },
   // 退出登录
   LOGOUT() {

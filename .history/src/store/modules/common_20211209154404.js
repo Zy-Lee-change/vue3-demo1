@@ -30,12 +30,14 @@ const getters = {
 };
 
 const mutations = {
+  setAjaxAuth: (state, data) => {
+    axios.defaults.headers.common["Authorization"] = data;
+  },
   // 登录时，保存token
   SET_TOKEN(state, data) {
     state.token = data;
     state.loginStatus = true;
     sessionStorage.setItem("TOKEN", data);
-    axios.defaults.headers.common["Authorization"] = data;
   },
 };
 
@@ -44,7 +46,7 @@ const actions = {
   CHECK_LOGIN({ commit, state }) {
     state.token = sessionStorage.getItem("TOKEN");
     console.log(state);
-    commit("SET_TOKEN", state.token);
+    commit("setAjaxAuth", state.token);
   },
   // 退出登录
   LOGOUT() {

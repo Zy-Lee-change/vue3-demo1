@@ -30,24 +30,26 @@ const getters = {
 };
 
 const mutations = {
-  // 登录时，保存token
-  SET_TOKEN(state, data) {
-    state.token = data;
-    state.loginStatus = true;
-    sessionStorage.setItem("TOKEN", data);
+  setAjaxAuth: (state, data) => {
     axios.defaults.headers.common["Authorization"] = data;
   },
 };
 
 const actions = {
+  // 登录时，保存token
+  SET_TOKEN({ state }, data) {
+    state.token = data;
+    state.loginStatus = true;
+    sessionStorage.setItem("TOKEN", data);
+  },
   // 页面刷新时，在缓存中重新获取token
   CHECK_LOGIN({ commit, state }) {
     state.token = sessionStorage.getItem("TOKEN");
     console.log(state);
-    commit("SET_TOKEN", state.token);
+    commit("setAjaxAuth", state.token);
   },
   // 退出登录
-  LOGOUT() {
+  logout() {
     /**
      * 调取退出登录的接口
      */

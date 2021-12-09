@@ -1,7 +1,6 @@
 import router from "./index";
 import store from "../store";
 
-// 检查是否有token
 store.dispatch("CHECK_LOGIN");
 router.beforeEach((to, from, next) => {
   console.log(store.state, to, from);
@@ -14,7 +13,6 @@ router.beforeEach((to, from, next) => {
     if (store.state.auth.authRoute.length > 0) {
       next();
     } else {
-      // 没有路由列表时，重新获取
       store.dispatch("Operation", () => {
         next({ ...to, replace: true });
       });

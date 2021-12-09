@@ -93,7 +93,7 @@ export default {
       }
     };
     const { proxy } = getCurrentInstance();
-    const store = useStore();
+    const
     /* ref可等同于vue2的this.$refs */
     let pswReg = ref(null);
 
@@ -129,9 +129,7 @@ export default {
       if (!flag) return;
       data_.passwordView = false;
     };
-    const logout = () => {
-      store.dispatch("LOGOUT");
-    };
+    const logout = () => {};
 
     watch(
       () => route_.name,
@@ -158,7 +156,6 @@ export default {
       title,
       passwordClose,
       submitPsw,
-      logout,
     };
   },
 };

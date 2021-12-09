@@ -51,9 +51,7 @@ export default defineComponent({
         if (valid) {
           store.commit("SET_TOKEN", JSON.stringify(ruleForm));
           console.log(router_, store.getters.GET_TOKEN);
-          store.dispatch("Operation", () => {
-            router_.replace({ name: "home" });
-          });
+          router_.replace({ name: "home" });
         }
       });
     };

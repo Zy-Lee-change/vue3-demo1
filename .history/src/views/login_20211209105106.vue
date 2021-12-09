@@ -49,11 +49,9 @@ export default defineComponent({
     const onSubmit = () => {
       myForm.value.validate((valid) => {
         if (valid) {
-          store.commit("SET_TOKEN", JSON.stringify(ruleForm));
-          console.log(router_, store.getters.GET_TOKEN);
-          store.dispatch("Operation", () => {
-            router_.replace({ name: "home" });
-          });
+          store.dispatch("SET_TOKEN", JSON.stringify(ruleForm));
+          console.log(router_);
+          proxy.$route.replace({ name: "login" });
         }
       });
     };

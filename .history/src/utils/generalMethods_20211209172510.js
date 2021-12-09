@@ -31,37 +31,4 @@ const getArrMaxMin = (type, data, keys) => {
   return res_;
 };
 
-/**
- * axios请求接口
- * url：地址，params：请求参数
- */
-const get = (url, params) => {
-  console.log("axios config", axios.defaults);
-  return new Promise((resolve, reject) => {
-    axios
-      .get(url, {
-        params: params,
-      })
-      .then((res) => {
-        resolve(res.data);
-      })
-      .catch((err) => {
-        reject(err);
-      });
-  });
-};
-const post = (url, params) => {
-  console.log("axios config", axios.defaults);
-  return new Promise((resolve, reject) => {
-    axios
-      .post(url, params)
-      .then((res) => {
-        resolve(res.data);
-      })
-      .catch((err) => {
-        reject(err);
-      });
-  });
-};
-
-export { getArrMaxMin, get, post };
+export { getArrMaxMin };

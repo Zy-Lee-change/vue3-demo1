@@ -7,6 +7,7 @@
  * @FilePath: \vue3-demo1\src\utils\generalMethods.js
  */
 import axios from "axios";
+import { reject, resolve } from "core-js/fn/promise";
 import "./../request/index";
 
 /* 获取对象数组中指定key的最大或最小值 type：max或min  */

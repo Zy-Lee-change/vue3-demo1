@@ -22,16 +22,10 @@
 </template>
 
 <script>
-import {
-  ref,
-  reactive,
-  getCurrentInstance,
-  computed,
-  defineComponent,
-} from "vue";
+import { ref, reactive, getCurrentInstance, computed } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
-export default defineComponent({
+export default {
   setup() {
     const { proxy } = getCurrentInstance();
     const store = useStore();
@@ -47,13 +41,12 @@ export default defineComponent({
       psw: proxy.$general.validate.normal(true, "密码", "blur"),
     });
     const onSubmit = () => {
+      router_.replace({ name: "home" });
       myForm.value.validate((valid) => {
         if (valid) {
-          store.commit("SET_TOKEN", JSON.stringify(ruleForm));
-          console.log(router_, store.getters.GET_TOKEN);
-          store.dispatch("Operation", () => {
-            router_.replace({ name: "home" });
-          });
+          store.dispatch("SET_TOKEN", JSON.stringify(ruleForm));
+          console.log(router_);
+          router_.replace({ name: "home" });
         }
       });
     };
@@ -73,7 +66,7 @@ export default defineComponent({
       resetForm,
     };
   },
-});
+};
 </script>
 
 <style lang="scss" scoped>

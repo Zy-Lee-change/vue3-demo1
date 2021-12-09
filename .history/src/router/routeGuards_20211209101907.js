@@ -1,20 +1,17 @@
 import router from "./index";
 import store from "../store";
 
-// 检查是否有token
 store.dispatch("CHECK_LOGIN");
-router.beforeEach((to, from, next) => {
-  console.log(store.state, to, from);
+router.beforeEach((from, to, next) => {
+  console.log(store.state, from, to);
   // 如果目标页是登录页，可直接跳转
-  if (to.name === "login") {
-    next();
-    return;
+  if (to.name === "login" || to.path === "/") {
+    return false;
   }
-  if (store.getters.GET_TOKEN) {
+  if (store.state.common.token) {
     if (store.state.auth.authRoute.length > 0) {
       next();
     } else {
-      // 没有路由列表时，重新获取
       store.dispatch("Operation", () => {
         next({ ...to, replace: true });
       });

@@ -130,7 +130,7 @@ export default {
       data_.passwordView = false;
     };
     const logout = () => {
-      store.dispatch("LOGOUT");
+      store.dispatch("lo");
     };
 
     watch(
@@ -158,7 +158,6 @@ export default {
       title,
       passwordClose,
       submitPsw,
-      logout,
     };
   },
 };

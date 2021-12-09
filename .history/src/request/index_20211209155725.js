@@ -15,7 +15,7 @@ axios.interceptors.request.use((config) => {
 axios.interceptors.response.use(
   (response) => {
     if (response.data.code === 70006) {
-      store.dispatch("LOGOUT");
+      store.dispatch("");
     }
     return response;
   },
