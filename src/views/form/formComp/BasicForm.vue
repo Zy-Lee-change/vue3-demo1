@@ -36,8 +36,8 @@ export default {
       region: "",
     });
     let rule = reactive({
-      name: proxy.$general.validate.normal(true, "活动名称", "blur", [3, 8]),
-      region: proxy.$general.validate.normal(true, "活动区域", "change"),
+      name: proxy.$vars.validate.normal(true, "活动名称", "blur", [3, 8]),
+      region: proxy.$vars.validate.normal(true, "活动区域", "change"),
     });
 
     const regForm = () => {

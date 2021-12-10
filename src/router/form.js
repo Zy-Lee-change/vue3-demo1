@@ -6,13 +6,14 @@
  * @FilePath: \vue3-demo1\src\router\form.js
  * Go Ring!
  */
+import { shallowRef } from "vue";
 const Forms = () =>
   import(/* webpackChunkName: "addressBook" */ "./../views/form/Forms.vue");
 export default [
   {
     path: "forms",
     name: "forms",
-    component: Forms,
+    component: shallowRef(Forms),
     meta: {
       auth: "pass",
       name: "多表单校验",

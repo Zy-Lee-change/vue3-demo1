@@ -24,7 +24,7 @@ const actions = {
      */
     // 筛选路由，剔除不可访问的路由
     state.authRoute = filterRoute(asyncRouterMap);
-    console.log(state.authRoute);
+    state.authRoute;
     router.addRoute(...state.authRoute);
     cb && cb();
   },

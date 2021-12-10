@@ -76,9 +76,9 @@ export default {
           trigger: "change",
         },
       ],
-      resource: proxy.$general.validate.normal(true, "特殊资源", "change"),
-      desc: proxy.$general.validate.normal(true, "活动形式", "blur"),
-      pass: proxy.$general.validate.normal(true, "密码", "blur"),
+      resource: proxy.$vars.validate.normal(true, "特殊资源", "change"),
+      desc: proxy.$vars.validate.normal(true, "活动形式", "blur"),
+      pass: proxy.$vars.validate.normal(true, "密码", "blur"),
       checkPass: [{ required: true, validator: validatePass, trigger: "blur" }],
     });
 

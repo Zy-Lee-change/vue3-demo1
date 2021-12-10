@@ -66,8 +66,8 @@
 
       <div class="pagination-box">
         <el-pagination
-          :page-sizes="$general.pageSizes"
-          :page-size="$general.pageSize"
+          :page-sizes="$vars.pageSizes"
+          :page-size="$vars.pageSize"
           layout="total, sizes, prev, pager, next, jumper"
           :total="tableTotal"
           background
@@ -122,7 +122,6 @@ export default defineComponent({
     });
 
     const getPieData = (val) => {
-      console.log(val);
       let chartData = val;
       let [color, arrName, arrValue, sum, pieSeries, lineYAxis] = [
         ["#6d9de0", "#49d896", "#f5d03a", "#f5853a", "#f5503a"],
@@ -142,7 +141,6 @@ export default defineComponent({
 
       // 图表option整理
       chartData.forEach((v, i) => {
-        // console.log(v,i, v.value,sum - v.value)
         let chartnewData = chartData.slice(0, i);
 
         let newValue = chartnewData.reduce((a, b) => {

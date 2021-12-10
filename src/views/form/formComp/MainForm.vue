@@ -49,8 +49,8 @@ export default {
       delivery: true,
     });
     let rule = reactive({
-      date1: proxy.$general.validate.normal(true, "活动日期", "change"),
-      date2: proxy.$general.validate.normal(true, "活动时间", "change"),
+      date1: proxy.$vars.validate.normal(true, "活动日期", "change"),
+      date2: proxy.$vars.validate.normal(true, "活动时间", "change"),
     });
 
     const regForm = () => {

@@ -108,8 +108,8 @@ export default {
         rePsw: "",
       },
       rules: {
-        oldPsw: proxy.$general.validate.normal(true, "旧密码"),
-        newPsw: proxy.$general.validate.psw(true, [8, 16]),
+        oldPsw: proxy.$vars.validate.normal(true, "旧密码"),
+        newPsw: proxy.$vars.validate.psw(true, [8, 16]),
         rePsw: [{ validator: checkRePsw, trigger: "blur" }],
       },
     });
@@ -136,7 +136,6 @@ export default {
     watch(
       () => route_.name,
       () => {
-        console.log(route_.meta);
         title.value = route_.meta.name;
       }
     );
@@ -150,7 +149,6 @@ export default {
         addr: "广东深圳*************",
         favor: "basketball，game",
       };
-      console.log(proxy.$general);
     });
     return {
       ...toRefs(data_),

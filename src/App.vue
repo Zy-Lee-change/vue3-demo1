@@ -16,9 +16,6 @@
 /* 引入需要用到的vue方法属性 */
 import { onMounted, defineComponent } from "vue";
 export default defineComponent({
-  mounted() {
-    console.log(this.$store.state);
-  },
   /* 组合式API setup函数 */
   setup() {
     onMounted(() => {});

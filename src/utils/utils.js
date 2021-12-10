@@ -6,12 +6,12 @@
  * @Description: In User Settings Edit
  * @FilePath: \vue3-demo1\src\utils\utils.js
  */
-import generalTool from "./generalTool";
+import generalVariable from "./generalVariable";
 import * as echarts from "echarts";
 import * as generalMethods from "./generalMethods";
 export default {
   install: (Vue) => {
-    Vue.config.globalProperties.$general = generalTool;
+    Vue.config.globalProperties.$vars = generalVariable;
     Vue.config.globalProperties.$echarts = echarts;
     Vue.config.globalProperties.$funs = generalMethods;
   },

@@ -151,7 +151,6 @@ export default {
       }
     );
     onMounted(() => {
-      console.log("-----------", myMap.value);
       mapChart = proxy.$echarts.init(myMap.value);
       registerChinaMap(); //注册地图
       init();

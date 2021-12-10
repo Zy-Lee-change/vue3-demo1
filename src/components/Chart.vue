@@ -35,7 +35,7 @@ export default {
       });
     };
     onMounted(() => {
-      console.log(props);
+      // console.log(props);
       drawChart();
     });
     return {

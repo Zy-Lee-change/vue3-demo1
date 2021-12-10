@@ -7,7 +7,12 @@
  * @FilePath: \vue3-demo1\src\utils\generalTool.js
  */
 /* 常用表单校验规则 */
+
+import urls from "./../request/urls";
+
 export default {
+  // 所有模块的接口集合
+  urls: urls,
   /* 分页size */
   pageSize: 10,
   /* 分页码数 */

@@ -43,14 +43,13 @@ export default defineComponent({
     });
 
     let rule = reactive({
-      name: proxy.$general.validate.normal(true, "账号", "blur"),
-      psw: proxy.$general.validate.normal(true, "密码", "blur"),
+      name: proxy.$vars.validate.normal(true, "账号", "blur"),
+      psw: proxy.$vars.validate.normal(true, "密码", "blur"),
     });
     const onSubmit = () => {
       myForm.value.validate((valid) => {
         if (valid) {
           store.commit("SET_TOKEN", JSON.stringify(ruleForm));
-          console.log(router_, store.getters.GET_TOKEN);
           store.dispatch("Operation", () => {
             router_.replace({ name: "home" });
           });

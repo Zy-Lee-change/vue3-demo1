@@ -43,7 +43,6 @@ const actions = {
   // 页面刷新时，在缓存中重新获取token
   CHECK_LOGIN({ commit, state }) {
     state.token = sessionStorage.getItem("TOKEN");
-    console.log(state);
     commit("SET_TOKEN", state.token);
   },
   // 退出登录
