@@ -1,7 +1,7 @@
 <template>
   <div class="login-bg wh pr">
     <div class="form-box pa">
-      <el-form :model="ruleForm" :rules="rule" ref="myForm" label-width="60px">
+      <el-form :model="ruleForm" :rules="rule" ref="myForm" :label-width="60">
         <el-form-item label="账号" prop="name">
           <el-input v-model="ruleForm.name" placeholder="请输入账号"></el-input>
         </el-form-item>
@@ -28,6 +28,7 @@ import {
   getCurrentInstance,
   computed,
   defineComponent,
+  onMounted,
 } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
@@ -64,6 +65,12 @@ export default defineComponent({
       myForm.value.resetFields();
     };
 
+    onMounted(() => {
+      console.log(
+        proxy.$funs.dateFormat("YYYY-mm-dd HH:MM:SS", new Date().getTime())
+      );
+      console.log(proxy.$funs.dateFormat("YYYY-mm-dd HH:MM:SS", 1628381288000));
+    });
     return {
       myForm,
       ruleForm,

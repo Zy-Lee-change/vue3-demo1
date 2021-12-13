@@ -14,7 +14,7 @@ import "./assets/style/reset.css";
 import "./assets/style/common.scss";
 import ElementPlus from "element-plus";
 // import zhLocale from "element-plus/lib/locale/lang/zh-cn";
-import "element-plus/lib/theme-chalk/index.css";
+import "element-plus/dist/index.css";
 
 import "./router/routeGuards";
 import utils from "./utils/utils";

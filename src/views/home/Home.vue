@@ -66,13 +66,23 @@
 
       <div class="pagination-box">
         <el-pagination
+          v-model:currentPage="currentPage"
           :page-sizes="$vars.pageSizes"
           :page-size="$vars.pageSize"
           layout="total, sizes, prev, pager, next, jumper"
           :total="tableTotal"
-          background
         >
         </el-pagination>
+        <!-- <el-pagination
+          :page-sizes="$vars.pageSizes"
+          :page-size="$vars.pageSize"
+          v-model:currentPage="currentPage"
+          :current-page="currentPage"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="tableTotal"
+          background
+        >
+        </el-pagination> -->
       </div>
     </div>
   </div>
@@ -117,6 +127,7 @@ export default defineComponent({
         },
       ],
       tableTotal: 400,
+      currentPage: 1,
       currentRow: null,
       currentRowChange: null,
     });
@@ -150,7 +161,7 @@ export default defineComponent({
         pieSeries.push({
           name: "学历",
           type: "pie",
-          clockWise: false,
+          clockwise: false,
           hoverAnimation: false,
           radius: [75 - i * 15 + "%", 68 - i * 15 + "%"],
           center: ["40%", "50%"],
@@ -177,7 +188,7 @@ export default defineComponent({
           type: "pie",
           silent: true,
           z: 1,
-          clockWise: false, //顺时加载
+          clockwise: false, //顺时加载
           hoverAnimation: false, //鼠标移入变大
           radius: [75 - i * 15 + "%", 68 - i * 15 + "%"],
           // radius: ['50%', '70%'],
