@@ -11,6 +11,7 @@ const state = {
     INDEX_HOME: true,
     INDEX_GANTT: true,
     INDEX_FORMS: true,
+    demo: true,
   },
 };
 
@@ -24,8 +25,11 @@ const actions = {
      */
     // 筛选路由，剔除不可访问的路由
     state.authRoute = filterRoute(asyncRouterMap);
-    state.authRoute;
-    router.addRoute(...state.authRoute);
+    console.log(state.authRoute.length);
+    for (let i = 0, iLen = state.authRoute.length; i < iLen; i++) {
+      router.addRoute(state.authRoute[i]);
+    }
+    console.log(router.getRoutes());
     cb && cb();
   },
 };
@@ -45,7 +49,6 @@ const filterRoute = (list) => {
     }
     return item;
   });
-
   const routeResult = failRemove(routeList);
   return routeResult;
 };

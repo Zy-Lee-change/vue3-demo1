@@ -14,5 +14,8 @@ export default {
     Vue.config.globalProperties.$vars = generalVariable;
     Vue.config.globalProperties.$echarts = echarts;
     Vue.config.globalProperties.$funs = generalMethods;
+    Vue.config.globalProperties.to = (data, option) => {
+      console.log("全局----", data, option);
+    };
   },
 };

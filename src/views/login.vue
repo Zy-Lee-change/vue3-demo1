@@ -52,6 +52,7 @@ export default defineComponent({
         if (valid) {
           store.commit("SET_TOKEN", JSON.stringify(ruleForm));
           store.dispatch("Operation", () => {
+            console.log(111);
             router_.replace({ name: "home" });
           });
         }

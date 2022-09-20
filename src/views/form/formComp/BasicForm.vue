@@ -55,7 +55,7 @@ export default {
     watch(
       () => ruleForm,
       (state, prevState) => {
-        console.log("deep ", state.type, prevState);
+        console.log("deep ", state, prevState);
         context.emit("update:basic", ruleForm);
       },
       { deep: true }

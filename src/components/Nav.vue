@@ -16,7 +16,7 @@
       @click="routeChange('home')"
       :class="{ ac: navName === 'home' }"
     >
-      <i class="el-icon-s-home"></i>
+      <el-icon :size="20"><home-filled /></el-icon>
     </div>
     <div
       class="nav-tab cursor"

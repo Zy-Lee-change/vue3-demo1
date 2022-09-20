@@ -8,6 +8,7 @@ import { shallowRef } from "vue";
 import form from "./form";
 const Index = () => import("./../views/Index");
 const Home = () => import("./../views/home/Home");
+const demo = () => import("./../views/demo");
 
 let childRouter = [];
 childRouter = childRouter.concat(form);
@@ -44,6 +45,16 @@ let asyncRouterMap = [
       },
       ...childRouter,
     ],
+  },
+  {
+    path: "/demo",
+    name: "demo",
+    component: shallowRef(demo),
+    meta: {
+      auth: "pass",
+      name: "demo",
+      code: "demo",
+    },
   },
 ];
 

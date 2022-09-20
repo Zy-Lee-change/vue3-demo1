@@ -130,8 +130,8 @@ export default defineComponent({
       currentPage: 1,
       currentRow: null,
       currentRowChange: null,
+      value1: "",
     });
-
     const getPieData = (val) => {
       let chartData = val;
       let [color, arrName, arrValue, sum, pieSeries, lineYAxis] = [

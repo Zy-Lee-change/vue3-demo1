@@ -12,7 +12,7 @@
     "core-js": "^3.6.5",
     "d3": "^7.1.1",
     "echarts": "^5.1.2",
-    "element-plus": "^1.2.0-beta.6",
+    "element-plus": "^2.1.9",
     "vue": "^3.2.4",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
@@ -46,7 +46,13 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {},
+    "globals": {
+      "defineProps": "readonly",
+      "defineEmits": "readonly",
+      "defineExpose": "readonly",
+      "withDefaults": "readonly"
+    }
   },
   "browserslist": [
     "> 1%",
