@@ -46,3 +46,4 @@ onMounted(() => {
   console.log(parentNodes(a4.value, 3));
 });
 </script>
+<style lang="scss" scoped></style>
