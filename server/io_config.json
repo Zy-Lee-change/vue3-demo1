@@ -1,0 +1,28 @@
+{
+  "socketPort": 8080,
+  "events": [
+    "a",
+    "b",
+    "c",
+    "d1",
+    "d2",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "test",
+    "hpc"
+  ],
+  "event": "hpc",
+  "eventType": "serial",
+  "serialport": "COM3",
+  "baundrate": 9600
+}
